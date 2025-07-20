@@ -27,10 +27,6 @@ const Navigation = ({
 }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   const handleMenuClick = (section: string) => {
     scrollToSection(section);
     setIsMenuOpen(false);
@@ -40,7 +36,7 @@ const Navigation = ({
     const labels = {
       en: {
         profile: 'Profile',
-        education: 'Education',
+        education: 'Education', 
         courses: 'Courses',
         experience: 'Experience',
         certificates: 'Certificates',
@@ -54,7 +50,7 @@ const Navigation = ({
       bn: {
         profile: 'প্রোফাইল',
         education: 'শিক্ষা',
-        courses: 'কোর্স',
+        courses: 'কোর্স', 
         experience: 'অভিজ্ঞতা',
         certificates: 'সার্টিফিকেট',
         skills: 'দক্ষতা',
@@ -68,90 +64,64 @@ const Navigation = ({
     return labels[language][id as keyof typeof labels['en']] || id;
   };
 
-  const LanguageToggle = () => (
-    <button
-      onClick={() => setLanguage(language === 'en' ? 'bn' : 'en')}
-      className="flex items-center gap-2 px-3 py-2 rounded-lg bg-primary/10 hover:bg-primary/20 transition-colors duration-200"
-      aria-label="Toggle Language"
-    >
-      <Globe size={16} />
-      <span className="text-sm font-medium">{language === 'en' ? 'বাংলা' : 'English'}</span>
-    </button>
-  );
-
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-md border-b border-border z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-center lg:justify-between h-16">
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
+        <div className="flex items-center justify-between h-16">
+          
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex items-center space-x-6">
             {navigationItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleMenuClick(item.target || item.id)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${
-                  activeSection === item.id || 
-                  (currentPage === item.id && ['research', 'blog'].includes(item.id))
-                    ? 'bg-gradient-to-r from-primary to-primary/80 text-primary-foreground shadow-lg scale-105'
-                    : 'hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 text-muted-foreground hover:text-foreground hover:scale-105'
+                className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  activeSection === item.id || (currentPage === item.id && ['research', 'blog'].includes(item.id))
+                    ? 'text-blue-600 bg-blue-50'
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                 }`}
               >
-                <span className={`transition-all duration-300 ${
-                  activeSection === item.id || 
-                  (currentPage === item.id && ['research', 'blog'].includes(item.id))
-                    ? 'text-primary-foreground drop-shadow-sm'
-                    : 'text-primary hover:scale-110'
-                }`}>
-                  {item.icon}
-                </span>
+                <span className="text-blue-500">{item.icon}</span>
                 <span>{getMenuItemLabel(item.id)}</span>
               </button>
             ))}
           </div>
 
-          {/* Desktop Language Toggle */}
-          <div className="hidden lg:block">
-            <LanguageToggle />
-          </div>
+          {/* Language Toggle */}
+          <button
+            onClick={() => setLanguage(language === 'en' ? 'bn' : 'en')}
+            className="flex items-center gap-2 px-3 py-2 bg-blue-100 text-blue-700 rounded-md hover:bg-blue-200 transition-colors"
+          >
+            <Globe size={16} />
+            <span className="text-sm font-medium">
+              {language === 'en' ? 'বাংলা' : 'English'}
+            </span>
+          </button>
 
-          {/* Mobile Menu Button + Language Toggle */}
-          <div className="lg:hidden flex items-center gap-3">
-            <LanguageToggle />
-            <button
-              onClick={toggleMenu}
-              className="p-2 rounded-xl hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 transition-all duration-300 hover:scale-105"
-              aria-label="Toggle Menu"
-            >
-              <span className="text-primary">
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </span>
-            </button>
-          </div>
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="lg:hidden p-2 text-gray-700 hover:text-blue-600"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-border">
-            <div className="py-4 space-y-2">
+          <div className="lg:hidden border-t bg-white">
+            <div className="py-2">
               {navigationItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => handleMenuClick(item.target || item.id)}
-                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-all duration-300 ${
-                    activeSection === item.id || 
-                    (currentPage === item.id && ['research', 'blog'].includes(item.id))
-                      ? 'bg-gradient-to-r from-primary to-primary/80 text-primary-foreground shadow-lg scale-105'
-                      : 'hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 text-muted-foreground hover:text-foreground hover:scale-105'
+                  className={`w-full flex items-center gap-3 px-4 py-3 text-left transition-colors ${
+                    activeSection === item.id || (currentPage === item.id && ['research', 'blog'].includes(item.id))
+                      ? 'text-blue-600 bg-blue-50'
+                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                   }`}
                 >
-                  <span className={`transition-all duration-300 ${
-                    activeSection === item.id || 
-                    (currentPage === item.id && ['research', 'blog'].includes(item.id))
-                      ? 'text-primary-foreground drop-shadow-sm'
-                      : 'text-primary hover:scale-110'
-                  }`}>
-                    {item.icon}
-                  </span>
+                  <span className="text-blue-500">{item.icon}</span>
                   <span className="font-medium">{getMenuItemLabel(item.id)}</span>
                 </button>
               ))}
