@@ -170,8 +170,10 @@ function App() {
         onBackToHome={handleBackToHome}
       />
 
-      {/* Render Current Page */}
-      {renderCurrentPage()}
+      {/* Main Content with top padding for fixed navigation */}
+      <div className="pt-16">
+        {renderCurrentPage()}
+      </div>
 
       {/* Floating Menu */}
       <FloatingMenu />
