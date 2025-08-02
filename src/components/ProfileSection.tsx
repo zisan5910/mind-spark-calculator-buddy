@@ -1,6 +1,6 @@
 
 import { Element } from 'react-scroll';
-import { Download, ScrollText, Search, PenTool, BadgeCheck } from './icons';
+import { Download, ScrollText, Search, PenTool } from './icons';
 import { cn } from '../lib/utils';
 import { motion } from 'framer-motion';
 
@@ -82,9 +82,8 @@ const ProfileSection = ({
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div>
-                <h1 className="text-3xl md:text-4xl font-bold mb-3 flex items-center justify-center lg:justify-start gap-2">
+                <h1 className="text-3xl md:text-4xl font-bold mb-3">
                   {content[language].name}
-                  <BadgeCheck className="text-blue-500 flex-shrink-0" size={28} />
                 </h1>
                 <p className="text-lg md:text-xl mb-4 text-[#0a192f]/90">
                   {content[language].role}

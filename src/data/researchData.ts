@@ -49,7 +49,7 @@ export interface ResearchItem {
     en: string;
     bn: string;
   };
-  image: string;
+  imageUrl: string;
 }
 
 export const researchData: ResearchItem[] = [
@@ -122,7 +122,7 @@ export const researchData: ResearchItem[] = [
       en: "Md Ridoan Mahmud Zisan",
       bn: "মো. রিদোয়ান মাহমুদ জিসান"
     },
-    image: "photo-1461749280684-dccba630e2f6"
+    imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=300&fit=crop"
   },
   {
     id: "2",
@@ -193,6 +193,6 @@ export const researchData: ResearchItem[] = [
       en: "Md Ridoan Mahmud Zisan",
       bn: "মো. রিদোয়ান মাহমুদ জিসান"
     },
-    image: "photo-1483058712412-4245e9b90334"
+    imageUrl: "https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=800&h=300&fit=crop"
   }
 ];

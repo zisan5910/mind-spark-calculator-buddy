@@ -14,7 +14,7 @@ export interface BlogPost {
     bn: string;
   };
   type: 'poem' | 'article';
-  image: string;
+  imageUrl: string;
 }
 
 export const blogData: BlogPost[] = [
@@ -60,7 +60,7 @@ No longer lost, no longer prone.`,
       bn: "মো রিদওয়ান মাহমুদ জিসান"
     },
     type: "poem",
-    image: "photo-1500375592092-40eb2168fd21"
+    imageUrl: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=600&h=300&fit=crop"
   },
   {
     id: "2", 
@@ -104,7 +104,7 @@ Forever Yours, forever mine.`,
       bn: "মো রিদওয়ান মাহমুদ জিসান"
     },
     type: "poem",
-    image: "photo-1487058792275-0ad4aaf24ca7"
+    imageUrl: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=600&h=300&fit=crop"
   },
   {
     id: "3",
@@ -148,6 +148,6 @@ From worldly chains, now depart.`,
       bn: "মো রিদওয়ান মাহমুদ জিসান"
     },
     type: "poem",
-    image: "photo-1518770660439-4636190af475"
+    imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=300&fit=crop"
   }
 ];

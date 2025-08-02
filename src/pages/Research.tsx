@@ -77,7 +77,7 @@ const Research = ({ language }: ResearchProps) => {
                 </h2>
                 <div className="mb-4 rounded-lg overflow-hidden">
                   <img 
-                    src={`https://images.unsplash.com/${item.image}?w=800&h=300&fit=crop`}
+                    src={item.imageUrl}
                     alt={item.title[language]}
                     className="w-full h-48 object-cover"
                   />

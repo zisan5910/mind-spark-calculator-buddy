@@ -52,7 +52,7 @@ const Blog = ({ language }: BlogProps) => {
                   {/* Content Image */}
                   <div className="rounded-lg overflow-hidden">
                     <img 
-                      src={`https://images.unsplash.com/${post.image}?w=600&h=300&fit=crop`}
+                      src={post.imageUrl}
                       alt={post.title[language]}
                       className="w-full h-64 object-cover"
                     />
