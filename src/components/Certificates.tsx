@@ -431,7 +431,7 @@ const CertificateSection = ({ language, content, certificates }: CertificateSect
     <Element name="certificates">
       <PremiumSection
         title={content[language].certifications}
-        icon={<FileBadge className="text-white" size={24} />}
+        icon={<FileBadge className="text-white" size={20} />}
         theme="certificates"
       >
         <CertificateSlider

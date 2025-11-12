@@ -269,7 +269,7 @@ const Experience = ({ language }: ExperienceProps) => {
     <Element name="experience">
       <PremiumSection
         title={language === 'en' ? 'Experience' : 'অভিজ্ঞতা'}
-        icon={<Briefcase className="text-white" size={24} />}
+        icon={<Briefcase className="text-white" size={20} />}
         theme="experience"
       >
 

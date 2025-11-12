@@ -342,8 +342,8 @@ const Courses = ({ language }: CoursesProps) => {
   return (
     <Element name="courses">
       <PremiumSection
-        title={language === 'en' ? 'Professional Development' : 'পেশাদার উন্নয়ন'}
-        icon={<BookOpen className="text-white" size={24} />}
+        title={language === 'en' ? 'Courses' : 'কোর্স'}
+        icon={<BookOpen className="text-white" size={20} />}
         theme="courses"
       >
 

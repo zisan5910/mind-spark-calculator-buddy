@@ -108,7 +108,7 @@ const Education = ({ language }: EducationProps) => {
     <Element name="education">
       <PremiumSection
         title={language === 'en' ? 'Education' : 'শিক্ষা'}
-        icon={<School className="text-white" size={24} />}
+        icon={<School className="text-white" size={20} />}
         theme="education"
       >
 
