@@ -191,8 +191,8 @@ const Skills = ({ language }: SkillsProps) => {
   return (
     <Element name="skills">
       <PremiumSection
-        title={language === 'en' ? 'Skills' : 'দক্ষতা'}
-        icon={<Code className="text-white" size={20} />}
+        title={language === 'en' ? 'Skills & Competencies' : 'দক্ষতা ও সক্ষমতা'}
+        icon={<Code className="text-white" size={24} />}
         theme="skills"
       >
 
@@ -204,7 +204,7 @@ const Skills = ({ language }: SkillsProps) => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="font-medium text-base flex items-center gap-3 mb-4 text-gray-700">
+            <h3 className="font-bold text-lg flex items-center gap-3 mb-4 text-gray-700">
               <div className="p-2 bg-blue-100 rounded-lg">
                 <Languages size={20} className="text-blue-600" />
               </div>
@@ -228,7 +228,7 @@ const Skills = ({ language }: SkillsProps) => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: sectionIndex * 0.1 }}
             >
-              <h3 className="font-medium text-base flex items-center gap-3 mb-4 text-gray-700">
+              <h3 className="font-bold text-lg flex items-center gap-3 mb-4 text-gray-700">
                 <div className={`p-2 ${section.color} rounded-lg`}>
                   {sectionIndex === 0 ? (
                     <Target size={20} className={section.iconColor} />

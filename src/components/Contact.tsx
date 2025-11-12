@@ -161,7 +161,7 @@ const Contact = ({ language }: ContactProps) => {
     <Element name="contact">
       <PremiumSection
         title={contactData.title[language]}
-        icon={<Mail className="text-white" size={20} />}
+        icon={<Mail className="text-white" size={24} />}
         theme="contact"
         className="mx-2 sm:mx-0"
       >

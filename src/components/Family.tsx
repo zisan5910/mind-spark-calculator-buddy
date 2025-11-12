@@ -113,8 +113,8 @@ const Information = ({ language, age }: InformationProps) => {
   return (
     <Element name="family">
       <PremiumSection
-        title={language === 'en' ? 'Family' : 'পরিবার'}
-        icon={<HeartHandshake className="text-white" size={20} />}
+        title={language === 'en' ? 'Family & Personal Information' : 'পারিবারিক ও ব্যক্তিগত তথ্য'}
+        icon={<HeartHandshake className="text-white" size={24} />}
         theme="family"
       >
 
