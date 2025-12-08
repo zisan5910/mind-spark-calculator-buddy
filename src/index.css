@@ -68,12 +68,15 @@ body::before {
 /* Performance Optimizations - Reduce animations for better performance */
 * {
   will-change: auto;
+  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: auto;
   scroll-padding-top: 5rem;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -162,6 +165,7 @@ body {
     font-family: 'Poppins', 'Hind Siliguri', system-ui, sans-serif;
     scroll-behavior: smooth;
     font-size: 16px;
+    contain: layout style paint;
   }
 
   body {
@@ -169,8 +173,6 @@ body {
     background: hsl(var(--surface));
     color: hsl(var(--text-primary));
     font-family: 'Poppins', 'Hind Siliguri', system-ui, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 
   * {
@@ -210,20 +212,21 @@ body {
     color: hsl(var(--text-primary));
   }
   
-  /* Premium Card System */
   .premium-card {
     @apply bg-white rounded-xl border border-gray-200 overflow-hidden relative;
     background: var(--gradient-surface);
     box-shadow: var(--shadow-card);
     transition: var(--transition-spring);
+    contain: content;
+    will-change: transform;
   }
-  
+
   .premium-card:hover {
     box-shadow: var(--shadow-elevated);
     transform: translateY(-2px);
     border-color: hsl(var(--primary) / 0.15);
   }
-  
+
   .premium-card::before {
     content: '';
     position: absolute;
@@ -235,17 +238,19 @@ body {
     opacity: 0;
     transition: var(--transition-smooth);
   }
-  
+
   .premium-card:hover::before {
     opacity: 1;
   }
-  
+
   .premium-section {
     @apply py-16 relative overflow-hidden;
+    contain: layout style paint;
   }
-  
+
   .premium-content {
     @apply container mx-auto px-4 relative z-10;
+    contain: content;
   }
   
   /* Enhanced Button System */
@@ -455,7 +460,6 @@ body {
   }
 }
 
-/* Enhanced Mobile Responsive Optimizations */
 @media (max-width: 768px) {
   html {
     font-size: 14px;
@@ -469,6 +473,7 @@ body {
   .premium-card {
     @apply p-3;
     margin-bottom: 1rem;
+    will-change: auto;
   }
 
   .premium-section {
@@ -510,6 +515,7 @@ body {
   img {
     max-width: 100%;
     height: auto;
+    contain: strict;
   }
 }
 

@@ -38,18 +38,16 @@ const SectionHeader = ({
       transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
       className={`flex items-center gap-4 mb-8 ${className}`}
     >
-      {/* Solid Color Icon Container */}
       <motion.div
-        className={`flex-shrink-0 p-3 rounded-xl shadow-lg ${getThemeStyles(theme)}`}
-        whileHover={{ scale: 1.05, rotate: 2 }}
+        className={`flex-shrink-0 p-4 rounded-full shadow-lg ${getThemeStyles(theme)}`}
+        whileHover={{ scale: 1.1, rotate: 5 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
       >
         <div className="text-white">
           {icon}
         </div>
       </motion.div>
-      
-      {/* Section Title and Subtitle */}
+
       <div className="flex-1">
         <motion.h2
           className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800 leading-tight"
